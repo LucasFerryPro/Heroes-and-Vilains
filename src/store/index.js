@@ -5,6 +5,13 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    secretOrg:'',
+    heroAlias:[],
+    currentHero:'',
+    teams:[],
+    currentTeam:'',
+    orgs:[],
+    currentOrg:'',
   },
   getters: {
   },
