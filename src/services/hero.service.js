@@ -2,7 +2,7 @@ const myAxios = require("@/services/axios.service");
 const store = require('@/store/index.js');
 
 const getaliases = () => {
-    return myAxios.get('heroes/aliases');
+    return myAxios.get('heroes/getaliases');
 }
 const createhero = (hero) => {
     return myAxios.post('heroes/create', hero);
@@ -10,12 +10,12 @@ const createhero = (hero) => {
 
 const updatehero = (hero) => {
     return myAxios.put('heroes/update', hero,
-        {headers: {'secret-org': store.state.secretOrg}});
+        {headers: {'org-secret': store.state.secretOrg}});
 }
 
 const getherobyid = (id) => {
     return myAxios.get('heroes/getbyid/' + id,
-        {headers: {'secret-org': store.state.secretOrg}});
+        {headers: {'org-secret': store.state.secretOrg}});
 }
 
 module.exports = {

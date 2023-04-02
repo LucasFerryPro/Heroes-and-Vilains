@@ -4,30 +4,29 @@ import store from '@/store/index.js';
 const getOrgs = () => {
     return myAxios.get("orgs/get");
 }
-
-const createOrg = (org) => {
+ const createOrg = (org) => {
     return myAxios.post("orgs/create", org);
 }
 
-const addteam = (team) => {
+const addTeam = (team) => {
     return myAxios.patch("orgs/addteam", team,
-        {headers: {'secret-org': store.state.secretOrg}});
+      {headers: {'org-secret': store.state.secretOrg}});
 }
 
-const removeteam = (team) => {
+const removeTeam = (team) => {
     return myAxios.patch("orgs/removeteam", team,
-        {headers: {'secret-org': store.state.secretOrg}});
+      {headers: {'org-secret': store.state.secretOrg}});
 }
 
-const getorgbyid = (id) => {
+const getOrg = (id) => {
     return myAxios.get("orgs/getbyid/" + id,
-        {headers: {'secret-org': store.state.secretOrg}});
+      {headers: {'org-secret': store.state.secretOrg}});
 }
 
-module.exports = {
+export {
     getOrgs,
     createOrg,
-    addteam,
-    removeteam,
-    getorgbyid
+    addTeam,
+    removeTeam,
+    getOrg
 }

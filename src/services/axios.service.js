@@ -4,6 +4,7 @@ let root = 'https://apidemo.iut-bm.univ-fcomte.fr/herocorp/';
 const myAxios = axios.create({
     baseURL: root,
     withCredentials: true
+
 });
 myAxios.interceptors.response.use(
     res => {

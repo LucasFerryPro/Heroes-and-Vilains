@@ -16,24 +16,14 @@ const routes = [
     component: () => import(/* webpackChunkName: "login" */ '../components/LoginComponent.vue')
   },
   {
-    path: '/organizations',
-    name: 'Organizations',
-    component: () => import(/* webpackChunkName: "orgs" */ '../components/OrgsComponent.vue')
+    path: '/orgs',
+    name: 'orgs',
+    component: () => import(/* webpackChunkName: "orgs" */ '../components/OrgsListComponent.vue')
   },
   {
-    path: '/organizations/:id',
-    name: 'Organization Details',
+    path: '/orgs/:id',
+    name: 'OrgDetails',
     component: () => import(/* webpackChunkName: "org" */ '../components/OrgComponent.vue')
-  },
-  {
-    path: '/teams',
-    name: 'Teams',
-    component: () => import(/* webpackChunkName: "teams" */ '../components/TeamsComponent.vue')
-  },
-  {
-    path: '/teams/:id',
-    name: 'Team Details',
-    component: () => import(/* webpackChunkName: "team" */ '../components/TeamComponent.vue')
   }
 ]
 
